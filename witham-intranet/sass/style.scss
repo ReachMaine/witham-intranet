@@ -6,7 +6,32 @@ Template: woffice
 
 //@import url("../woffice/css/foundation.css");
 @import "partials/colors";
-
 /* =Theme customization starts here */
 
+// blog archive
+#content-container {
+  .masonry-layout {
+      .box.blog-item {
+        border-radius: 0px;
+        .intern-thumbnail{
+          height: initial;
+          border-radius: 0px;
+          a {
+            border-radius: 0px;
+          }
+        }
+      }
+  }
+}
+
+// single post
+#content {
+    article {
+      .intern-thumbnail {
+        //width: 100%;  setting in theme options -> Title Box -> Height of featured image.
+        //height: 100%!important;
+        text-align: center;
+      }
+    }
+}
 @import "partials/media"; // keep at end of of file
