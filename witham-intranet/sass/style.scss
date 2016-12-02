@@ -28,6 +28,22 @@ Template: woffice
   }
 }
 
+//header
+
+header {
+  #featuredbox .featured-background { //fixing header image display
+    background-attachment: scroll;
+  }
+
+  .featured-layer {
+    opacity: .5; //opacity of header image overlay
+  }
+
+  .pagetitle > h1 {
+    text-shadow: 2px 2px #414f63; //text-shadow on page title
+  }
+}
+
 
 // blog archive
 #content-container {
