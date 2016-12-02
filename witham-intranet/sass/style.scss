@@ -30,8 +30,8 @@ Template: woffice
 
 //header
 
-header {
-  #featuredbox .featured-background { //fixing header image display
+header#featuredbox {
+  .featured-background { //fixing header image display
     background-attachment: scroll;
   }
 
