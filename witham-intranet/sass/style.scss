@@ -36,12 +36,20 @@ header#featuredbox {
   }
 
   .featured-layer {
-    opacity: .5; //opacity of header image overlay
+    opacity: .2; //opacity of header image overlay
   }
 
   .pagetitle > h1 {
     text-shadow: 2px 2px #414f63; //text-shadow on page title
   }
+}
+
+.page-id-132 #featuredbox .featured-background {
+  background-position: center center; //background-position for Directory header
+}
+
+.page-id-74 #featuredbox .featured-background {
+  background-position: top center; //background-position for Resources header
 }
 
 
