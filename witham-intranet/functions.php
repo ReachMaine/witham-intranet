@@ -21,9 +21,35 @@ function print_menu_shortcode($atts, $content = null) {
 				}
 		}
 		if ($good) {
-			return wp_nav_menu( array( 'menu' => $name, 'menu_class' => $class, 'echo' => false ) );
+			return wp_nav_menu( array( 'menu' => $name, 'menu_class' => $cworlass, 'echo' => false ) );
 		}
 
 
 }
  add_shortcode('zigmenu', 'print_menu_shortcode');
+
+ // add some widget areas to theme.
+ function reach_widgets_init() {
+		if ( function_exists('register_sidebar') ){
+			register_sidebar(array(
+									 'name' => __('Nav Widgets', 'woffice'),
+									 'id' => 'sidenav-widgets',
+									 'description' => __('Appears Under the nav menu', 'woffice'),
+									 'before_widget' => '<div id="%1$s" class="widget box %2$s"><div class="intern-padding">',
+									 'after_widget' => '</div></div>',
+									 'before_title' => '<div class="intern-box box-title"><h3>',
+									 'after_title' => '</h3></div>',
+							 ));
+		}
+
+	/* 	register_sidebar(array(
+								 'name' => __('Below Blog', 'woffice'),
+								 'id' => 'blog-bottom',
+								 'description' => __('Appears Under the blog', 'woffice'),
+								 'before_widget' => '<div id="%1$s" class="widget box %2$s"><div class="intern-padding">',
+								 'after_widget' => '</div></div>',
+								 'before_title' => '<div class="intern-box box-title"><h3>',
+								 'after_title' => '</h3></div>',
+						 )); */
+}
+	add_action( 'widgets_init', 'reach_widgets_init' );
