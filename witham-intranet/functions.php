@@ -11,19 +11,31 @@ add_action('wp_enqueue_scripts', 'woffice_child_scripts', 30);
 
  // add menu within content - testing.
 function print_menu_shortcode($atts, $content = null) {
-		extract(shortcode_atts(array( 'name' => null, 'class' => null, 'role'=> '' ), $atts));
-		// one way to do this is to check here for user can
+		extract(shortcode_atts(array( 'name' => '', 'class' => '', 'title' => '' ), $atts));
 		$good = true;
-		if ($role) {
-				$user = wp_get_current_user();
-				if ( !in_array( $role, (array) $user->roles )  ) {
-						$good=false;
-				}
+		$html_out = "";
+		//$html_out .= "<p>here with name:{".$name."} and class={}".$class."}</p>";
+		if (!name) {
+			$good = false;
 		}
 		if ($good) {
-			return wp_nav_menu( array( 'menu' => $name, 'menu_class' => $cworlass, 'echo' => false ) );
+			$menu_out = wp_nav_menu( array( 'menu' => $name, 'menu_class' => $class, 'echo' => false,'fallback_cb' => false ) );
+			//echo "<pre>"; var_dump($menu_out); echo "</pre>";
+			if ( ($menu_out == false) || ($menu_out == void) ){
+				$good = false;
+			}
 		}
-
+		if ($good) {
+				if ($title) {
+					$html_out .= "<p class='zig-menu'>".$title."</p>";
+				}
+				$html_out .= $menu_out;
+		}
+		if ($good){
+		} else {
+			//$html_out .= "nope!";
+		}
+		return $html_out;
 
 }
  add_shortcode('zigmenu', 'print_menu_shortcode');
