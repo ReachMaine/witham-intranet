@@ -42,14 +42,14 @@ function print_menu_shortcode($atts, $content = null) {
 							 ));
 		}
 
-	/* 	register_sidebar(array(
+	 	register_sidebar(array(
 								 'name' => __('Below Blog', 'woffice'),
-								 'id' => 'blog-bottom',
+								 'id' => 'blog-bottom-extra',
 								 'description' => __('Appears Under the blog', 'woffice'),
 								 'before_widget' => '<div id="%1$s" class="widget box %2$s"><div class="intern-padding">',
 								 'after_widget' => '</div></div>',
 								 'before_title' => '<div class="intern-box box-title"><h3>',
 								 'after_title' => '</h3></div>',
-						 )); */
+						 ));
 }
 	add_action( 'widgets_init', 'reach_widgets_init' );
