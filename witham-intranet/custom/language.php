@@ -1,13 +1,13 @@
-<?php 
-/* languages customizations 
+<?php
+/* languages customizations
 */
 	if ( !function_exists('eai_change_theme_text') ){
 		function eai_change_theme_text( $translated_text, $text, $domain ) {
 			 /* if ( is_singular() ) { */
 			    switch ( $translated_text ) {
 
-		            case 'Category' :
-		                $translated_text = __( '',  $domain  );
+		            case 'Category Archives: <span>%s</span>' :
+		                $translated_text = __( '%s',  $domain  );
 		                break;
 		            /*case 'Type here...':
 		            	$translated_text = __( 'Search...',  $domain  );

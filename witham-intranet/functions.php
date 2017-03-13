@@ -8,6 +8,7 @@ function woffice_child_scripts() {
 add_action('wp_enqueue_scripts', 'woffice_child_scripts', 30);
 
  require_once(get_stylesheet_directory().'/custom/branding.php');
+  require_once(get_stylesheet_directory().'/custom/language.php');
 
  // add menu within content - testing.
 function print_menu_shortcode($atts, $content = null) {
